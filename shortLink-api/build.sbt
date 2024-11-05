@@ -32,6 +32,7 @@ libraryDependencies ++= Seq(
   "org.springframework.boot" % "spring-boot-devtools" % verSpringBoot,
   "org.springframework.boot" % "spring-boot-starter-actuator" % verSpringBoot,
   "org.springframework.boot" % "spring-boot-starter-tomcat" % verSpringBoot,
+  "org.springframework.boot" % "spring-boot-starter-data-redis" % verSpringBoot,
   "org.jolokia" % "jolokia-core" % "1.3.6",
 //  "com.h2database" % "h2" % "1.4.193",
 //  "org.hibernate" % "hibernate-java8" % "5.2.16.Final",

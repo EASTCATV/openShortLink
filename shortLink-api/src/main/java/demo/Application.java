@@ -4,6 +4,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule;
 import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -13,7 +14,6 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 @ServletComponentScan
 @SpringBootApplication
-
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

@@ -4,7 +4,7 @@
 		module="shortlink-api-build-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20241105113227"
+		publication="20241105134739"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

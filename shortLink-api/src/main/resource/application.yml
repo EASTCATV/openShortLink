@@ -1,0 +1,24 @@
+server:
+    port: 8080
+    session:
+        timeout: 86400
+spring:
+    http:
+        converters:
+            preferred-json-mapper: jackson
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        serialization:
+            write_dates_as_timestamps: false
+        time-zone: GMT+8
+    profiles:
+        active: dev
+    servlet:
+        multipart:
+            max-file-size: 20MB
+            max-request-size: 200MB
+domain:
+    lists:
+    - www.baidu.com
+    - www.google.com
+    list: www.baidu.com/,www.google.com/

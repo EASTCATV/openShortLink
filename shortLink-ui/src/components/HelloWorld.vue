@@ -16,15 +16,20 @@
       <textarea v-model="responseData" readonly></textarea>
       <button @click="copyToClipboard">复制结果</button>
     </div>
+    <div v-if="isVisible" class="bubble-tip" @transitionend="handleTransitionEnd">
+      复制成功！
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'; // 确保这行存在并在最上面
 export default {
   data() {
     return {
       inputText: "",          // 输入框中的内容
       responseData: "",       // 后端返回的数据
+      isVisible: false,
     };
   },
   methods: {
@@ -36,33 +41,38 @@ export default {
         alert("请输入内容！");
         return;
       }
-      
-      try {
-        // 发送 POST 请求
-        const response = await fetch("https://me.me:8080/shortchain", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ data: this.inputText }),
-        });
-        const result = await response.json();
 
-        // 将后端返回的数据存入 responseData 中
-        this.responseData = result.data;
+      try {
+
+        const res = await axios.post('http://127.0.0.1:8080/short/getLinks', this.inputText, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        this.responseData  = res.data;
+        console.log("==========res",res)
+        this.copySuccess = false; // Reset copy success message
+
       } catch (error) {
         console.error("请求失败：", error);
-        alert("请求失败，请稍后重试！");
+        alert("请求失败，请稍后重试！"+this.inputText);
       }
     },
     async copyToClipboard() {
       try {
         await navigator.clipboard.writeText(this.responseData);
-        alert("复制成功！");
+        // alert("复制成功！");
+        this.showBubbleTip();
       } catch (error) {
         console.error("复制失败：", error);
         alert("复制失败，请手动复制！");
       }
+    },
+    showBubbleTip() {
+      this.isVisible = true; // 显示气泡提示
+      setTimeout(() => {
+        this.isVisible = false; // 2秒后隐藏
+      }, 2000);
     },
   },
 };
@@ -118,4 +128,19 @@ textarea {
   border-radius: 4px;
   resize: none;
 }
+.bubble-tip {
+  position: fixed;
+  top: 20px; /* 距离顶部20px */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 使其水平居中 */
+  background-color: rgba(0, 0, 0, 0.8); /* 黑色半透明背景 */
+  color: white; /* 白色文字 */
+  padding: 10px 15px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+  opacity: 1; /* 初始透明度 */
+  transition: opacity 0.5s ease; /* 渐变效果 */
+  z-index: 1000; /* 确保显示在其他元素之上 */
+}
+
 </style>

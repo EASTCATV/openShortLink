@@ -26,6 +26,7 @@
   "dependencies": {
     "@bassist/progress": "^0.2.2",
     "@bassist/utils": "^0.14.0",
+    "axios": "^1.7.7",
     "pinia": "^2.1.7",
     "vue-router": "^4.2.5"
   },
