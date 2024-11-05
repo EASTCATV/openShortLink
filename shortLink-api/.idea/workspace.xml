@@ -277,6 +277,10 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/yang/projects/OpenSource/openShortLink/shortLink-api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
@@ -301,18 +305,6 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="demo" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -379,7 +371,7 @@
       <workItem from="1596599353662" duration="2098000" />
       <workItem from="1596601489971" duration="255000" />
       <workItem from="1730777166917" duration="300000" />
-      <workItem from="1730777544352" duration="187000" />
+      <workItem from="1730777544352" duration="511000" />
     </task>
     <servers />
   </component>

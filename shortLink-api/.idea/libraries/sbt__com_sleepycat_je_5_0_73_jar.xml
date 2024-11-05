@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="sbt: com.sleepycat:je:5.0.73:jar">
+  <library name="sbt: com.sleepycat:je:5.0.73:jar" external-system-id="SBT">
     <CLASSES>
       <root url="jar://$USER_HOME$/.ivy2/cache/com.sleepycat/je/jars/je-5.0.73.jar!/" />
     </CLASSES>

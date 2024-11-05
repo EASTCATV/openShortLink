@@ -45,6 +45,8 @@ dist/
 *.iml
 .svn/
 target/
+**/target/**
+shortLink-api/project/target
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

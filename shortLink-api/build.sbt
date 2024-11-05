@@ -55,7 +55,7 @@ libraryDependencies ++= Seq(
   "com.voodoodyne.jackson.jsog" % "jackson-jsog" % "1.1",
   "org.springframework" % "spring-websocket" % "4.1.9.RELEASE",
   "org.springframework" % "spring-messaging" % "4.1.9.RELEASE",
-  "net.sf.json-lib" % "json-lib" % "2.4" from "http://repo1.maven.org/maven2/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar",
+  //"net.sf.json-lib" % "json-lib" % "2.4" from "http://repo1.maven.org/maven2/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar",
   "net.sf.ezmorph" % "ezmorph" % "1.0.6"
 )
 

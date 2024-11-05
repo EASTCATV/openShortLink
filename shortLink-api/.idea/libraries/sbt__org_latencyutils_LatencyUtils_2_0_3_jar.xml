@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="sbt: org.latencyutils:LatencyUtils:2.0.3:jar">
+  <library name="sbt: org.latencyutils:LatencyUtils:2.0.3:jar" external-system-id="SBT">
     <CLASSES>
       <root url="jar://$USER_HOME$/.ivy2/cache/org.latencyutils/LatencyUtils/jars/LatencyUtils-2.0.3.jar!/" />
     </CLASSES>

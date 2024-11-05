@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt-build.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt.docker-scala-springboot-sbt-build.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-scala-springboot-sbt.docker-scala-springboot-sbt-build.iml" />
     </modules>
   </component>
 </project>
