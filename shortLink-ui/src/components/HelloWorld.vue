@@ -43,8 +43,9 @@ export default {
       }
 
       try {
+        //http://127.0.0.1:8080/short/getLinks?s_url=12312
 
-        const res = await axios.post('http://127.0.0.1:8080/short/getLinks', this.inputText, {
+        const res = await axios.get('http://short-api.godsdo.com:8080/api/short/getLinks?s_url='+this.inputText, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -58,15 +59,40 @@ export default {
         alert("请求失败，请稍后重试！"+this.inputText);
       }
     },
-    async copyToClipboard() {
-      try {
-        await navigator.clipboard.writeText(this.responseData);
-        // alert("复制成功！");
-        this.showBubbleTip();
-      } catch (error) {
-        console.error("复制失败：", error);
-        alert("复制失败，请手动复制！");
+    async copyText  ()  {
+      if (navigator && navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(textToCopy.value);
+          alert('Text copied to clipboard!');
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+          alert('Failed to copy text to clipboard.');
+        }
+      } else {
+        console.error('Clipboard API is not available.');
+        alert('Clipboard API is not available.');
       }
+    },
+    async copyToClipboard() {
+      var text = this.responseData
+       navigator.clipboard
+        .writeText(text)
+        .then(() => {
+           Promise.resolve()
+          this.showBubbleTip();
+        })
+        .catch((err) => {
+            console.error("复制失败：", error);
+            alert("复制失败，请手动复制！"+err);
+        })
+      // try {
+      //   await navigator.clipboard.writeText(this.responseData);
+      //   // alert("复制成功！");
+      //   this.showBubbleTip();
+      // } catch (error) {
+      //   console.error("复制失败：", error);
+      //   alert("复制失败，请手动复制！");
+      // }
     },
     showBubbleTip() {
       this.isVisible = true; // 显示气泡提示
