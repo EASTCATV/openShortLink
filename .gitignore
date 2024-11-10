@@ -3,6 +3,16 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 */.idea/*
+/shortLink-api/project/target
+/shortLink-api/project/.idea
+/shortLink-api/project/.mvn
+/shortLink-api/project/.mvn/wrapper
+/shortLink-api/project/.mvn/wrapper/maven-wrapper.jar
+/shortLink-api/project/.mvn/wrapper/maven-wrapper.properties
+/shortLink-api/project/.mvn/wrapper/MavenWrapperDownloader.java
+/shortLink-ui/.idea
+/shortLink-ui/node_modules
+/shortLink-ui/dist
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

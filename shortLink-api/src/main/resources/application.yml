@@ -12,13 +12,9 @@ spring:
             write_dates_as_timestamps: false
         time-zone: GMT+8
     profiles:
-        active: dev
+        active: prod
+#        active: dev
     servlet:
         multipart:
             max-file-size: 20MB
             max-request-size: 200MB
-domain:
-    lists:
-    - www.baidu.com
-    - www.google.com
-    list: www.baidu.com/,www.google.com/
