@@ -24,6 +24,7 @@
 
 <script>
 import axios from 'axios'; // 确保这行存在并在最上面
+import { copyValue } from '@/utils/utils.js'
 export default {
   data() {
     return {
@@ -45,7 +46,7 @@ export default {
       try {
         //http://127.0.0.1:8080/short/getLinks?s_url=12312
 
-        const res = await axios.get('http://short-api.godsdo.com:8080/api/short/getLinks?s_url='+this.inputText, {
+        const res = await axios.get('http://short-api.y20y.com:8080/api/short/getLinks?s_url='+this.inputText, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -59,6 +60,18 @@ export default {
         alert("请求失败，请稍后重试！"+this.inputText);
       }
     },
+    // async  copyToClipboard(text) {
+    //   if (!navigator.clipboard) {
+    //     console.error('Clipboard API is not available');
+    //     return;
+    //   }
+    //   try {
+    //     await navigator.clipboard.writeText(text);
+    //     console.log('Text copied to clipboard');
+    //   } catch (err) {
+    //     console.error('Failed to copy text', err);
+    //   }
+    // },
     async copyText  ()  {
       if (navigator && navigator.clipboard) {
         try {
@@ -73,26 +86,37 @@ export default {
         alert('Clipboard API is not available.');
       }
     },
+    // async copyToClipboard(text) {
+    //   if (typeof navigator.clipboard === 'undefined') {
+    //     console.error('Clipboard API is not available');
+    //     return;
+    //   }
+    //   try {
+    //     await navigator.clipboard.writeText(text);
+    //     console.log('Text copied to clipboard');
+    //   } catch (err) {
+    //     console.error('Failed to copy text', err);
+    //   }
+    // },
+
     async copyToClipboard() {
       var text = this.responseData
-       navigator.clipboard
-        .writeText(text)
-        .then(() => {
-           Promise.resolve()
-          this.showBubbleTip();
-        })
-        .catch((err) => {
-            console.error("复制失败：", error);
-            alert("复制失败，请手动复制！"+err);
-        })
-      // try {
-      //   await navigator.clipboard.writeText(this.responseData);
-      //   // alert("复制成功！");
-      //   this.showBubbleTip();
-      // } catch (error) {
-      //   console.error("复制失败：", error);
-      //   alert("复制失败，请手动复制！");
-      // }
+      const res = await copyValue(text)
+      if (res === true) {
+        this.showBubbleTip();
+      } else {
+        alert("复制失败，请手动复制！"+err);
+      }
+       // navigator.clipboard
+       //  .writeText(text)
+       //  .then(() => {
+       //     Promise.resolve()
+       //    this.showBubbleTip();
+       //  })
+       //  .catch((err) => {
+       //      console.error("复制失败：", error);
+       //      alert("复制失败，请手动复制！"+err);
+       //  })
     },
     showBubbleTip() {
       this.isVisible = true; // 显示气泡提示
